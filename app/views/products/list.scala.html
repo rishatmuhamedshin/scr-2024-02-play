@@ -1,0 +1,17 @@
+@import models.products.ProductItem
+@import models.products.Product
+
+@import scala.collection.mutable
+@(products: mutable.Map[Product,List[ProductItem]])
+
+@showProduct(products:mutable.Map[Product,List[ProductItem]]) = {
+    @for((k,v) <- products){
+        <li> @k => @v</li>
+    }
+}
+
+@main("Products list"){
+    <ul>
+    @showProduct(products)
+    </ul>
+}
