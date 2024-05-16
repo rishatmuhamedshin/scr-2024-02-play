@@ -1,4 +1,3 @@
-
 import com.google.inject.{Guice, Module}
 import db.{Liqui, SquerylConfig}
 import org.squeryl.{Session, SessionFactory}

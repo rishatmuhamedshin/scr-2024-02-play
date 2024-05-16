@@ -11,5 +11,4 @@ object PhoneBookSchema extends Schema {
 
   val addresses = table[Address]
 
-
 }

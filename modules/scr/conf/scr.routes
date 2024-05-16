@@ -21,13 +21,13 @@ POST /login                    controllers.IndexController.loginFormSubmit()
 
 # Product routes
 
-GET  /products/list            @controllers.ProductController.list
+#GET  /products/list            @controllers.ProductController.list
+
+
+POST /products                 @controllers.ProductController.addProduct
+GET /product/:id               @controllers.ProductController.deleteProduct(id: String)
+GET /products                  @controllers.ProductController.listProducts(title: Option[String] ?= None)
 
 # PhoneBook
 
 GET  /phones/list              @controllers.PhoneBookController.list()
-GET  /phones/testCrud          @controllers.PhoneBookController.testCrud()
-
-# Songs
-
-GET  /songs/                   @controllers.SongController.test()
