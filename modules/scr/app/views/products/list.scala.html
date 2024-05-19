@@ -1,7 +1,7 @@
-@(products: List[models.Product])
+@(products: List[dto.products.ProductDTO])
 
-@showProduct(p: models.Product) = {
-    <li>@p.title @p.price</li>
+@showProduct(p: dto.products.ProductDTO) = {
+    <li>@p.title @p.list.toString</li>
 }
 
 @main("Products list"){

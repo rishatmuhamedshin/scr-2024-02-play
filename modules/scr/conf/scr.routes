@@ -16,12 +16,12 @@ GET /action14/:userId          controllers.IndexController.action14(userId: mode
 GET /action15                  controllers.IndexController.action15(paging: Option[models.Paging] ?= None)
 POST /action18                 controllers.IndexController.action18
 POST /action19                 controllers.IndexController.action19
-GET  /login                    controllers.IndexController.loginPage()
-POST /login                    controllers.IndexController.loginFormSubmit()
+#GET  /login                    controllers.IndexController.loginPage()
+#POST /login                    controllers.IndexController.loginFormSubmit()
 
 # Product routes
 
-GET  /products/list            @controllers.ProductController.list
+#GET  /products/list            @controllers.ProductController.list
 
 # PhoneBook
 
@@ -31,3 +31,11 @@ GET  /phones/testCrud          @controllers.PhoneBookController.testCrud()
 # Songs
 
 GET  /songs/                   @controllers.SongController.test()
+
+
+# HomeWork 7
+
+GET /products                   @controllers.ProductControllerHomeWork.listProducts(title: Option[String] ?= None)
+DELETE /products/:id            @controllers.ProductControllerHomeWork.deleteProduct(id: String)
+POST /products                  @controllers.ProductControllerHomeWork.addProduct()
+PATCH /products                 @controllers.ProductControllerHomeWork.updateProduct()
