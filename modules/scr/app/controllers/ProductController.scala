@@ -1,33 +1,21 @@
 package controllers
 
 import com.google.inject.Inject
-import models.dto.products.ProductDTO
-import models.services.ProductService
+import models.Product
+import models.services.LogService
 import play.api.mvc.{Action, Controller}
 
+class ProductController @Inject()(val logService: LogService) extends Authorization {
 
-class ProductController @Inject()(val productService: ProductService) extends Controller {
-
-
-  def addProduct = Action(parse.json[ProductDTO]) { rc =>
-    val body: ProductDTO = rc.body
-    productService.productAddOrUpdate(body)
-    Ok(body.toString)
-  }
-
-  def deleteProduct(id: String) = Action {
-    if (productService.productDelete(id)) {
-      Ok("Product Delete")
-    } else {
-      NotFound
-    }
-  }
-
-  def listProducts(title: Option[String]) = Action {
-    Ok(views.html.products.list(
-      productService.showProducts(title)
-    ))
-  }
-
+//  def list = authorize{ rc =>
+//    logService.log("Hello from ProductController")
+//    Ok(views.html.products.list(List(
+//      Product("product1", 20),
+//      Product("product2", 30),
+//      Product("product3", 40),
+//      Product("product4", 50),
+//      Product("product4", 60)
+//    )))
+//  }
 
 }
