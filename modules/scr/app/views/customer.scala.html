@@ -1,0 +1,21 @@
+@(customer: List[models.dao.entities.car.Customer])
+
+
+@createTr(c: models.dao.entities.car.Customer) = {
+    <tr>
+        <th scope="table-light">@c.firstName</th>
+        <th scope="table-light">@c.lastName</th>
+        <th scope="table-light">@c.email</th>
+        <th scope="table-light">@c.street</th>
+        <th scope="table-light">@c.city</th>
+    </tr>
+}
+@main("journal auto"){
+    <table class="table table-hover">
+    @for(c <- customer){
+        @createTr(c)
+    }
+    </table>
+    <a href="@routes.LoginController.logOut()" class="btn btn-primary">Выйти</a>
+    <a href="@routes.LoginController.index()" class="btn btn-primary">Вернуться к машинкам</a>
+}@import controllers.car.routes

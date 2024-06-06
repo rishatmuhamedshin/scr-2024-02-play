@@ -1,0 +1,20 @@
+GET                 /                   @controllers.car.LoginController.loginPage
+POST                /                   @controllers.car.LoginController.loginFormSubmit
+GET                /logout              @controllers.car.LoginController.logOut
+
+
+GET                 /carsharing         @controllers.car.LoginController.index
+GET                 /showClients        @controllers.car.MainController.showClients
+
+GET                 /carCreate          @controllers.car.MainController.showCarForm
+POST                /carCreate          @controllers.car.MainController.carCreate
+
+#GET                 /reservationCreate  @controllers.car.MainController.reservationCreate
+#POST                /showReservation    @controllers.car.MainController.showReservation
+
+GET                 /registration       @controllers.car.RegistrationController.registration
+POST                /registration       @controllers.car.RegistrationController.registrationCustomer
+
+
+
+

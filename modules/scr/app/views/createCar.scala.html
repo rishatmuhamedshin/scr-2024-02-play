@@ -1,0 +1,22 @@
+@import models.dto.LoginDTO
+
+
+@import models.dto.CarDTO
+
+@import controllers.car.routes
+@(form: Form[CarDTO])(implicit lang: play.api.i18n.Lang)
+
+@main("Create Car"){
+
+    <H1>CAR</H1>
+    @helper.form(action = routes.MainController.carCreate()){
+        @helper.inputText(form("mileage"))(views.fieldsConstructors.bFieldContructors, lang)
+        @helper.inputText(form("regNumber"))(views.fieldsConstructors.bFieldContructors, lang)
+        @helper.inputText(form("description"))(views.fieldsConstructors.bFieldContructors, lang)
+        @helper.inputText(form("hour"))(views.fieldsConstructors.bFieldContructors, lang)
+        @helper.inputText(form("modelId"))(views.fieldsConstructors.bFieldContructors, lang)
+        @helper.inputText(form("address"))(views.fieldsConstructors.bFieldContructors, lang)
+        @helper.inputPassword(form("releaseDate"))(views.fieldsConstructors.bFieldContructors, lang)
+        <button type="submit" class="btn btn-primary">Создать</button>
+    }
+}

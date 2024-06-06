@@ -1,0 +1,32 @@
+@(model: List[models.dao.entities.car.Model], cars: List[models.dao.entities.car.Car])
+
+    @createTable(m: models.dao.entities.car.Model)(c: models.dao.entities.car.Car) = {
+        @if(m.id == c.modelId){
+            @createTr(m,c)
+        }
+    }
+
+    @createTr(m: models.dao.entities.car.Model, c: models.dao.entities.car.Car) = {
+        <tr>
+            <th scope="table-light">@c.mileage</th>
+            <th scope="table-light">@c.regNumber</th>
+            <th scope="table-light">@m.brand </th>
+            <th scope="table-light">@m.typeBody</th>
+            <th scope="table-light">@m.classes</th>
+            <th scope="table-light">@c.address</th>
+            <th scope="table-light">@c.description</th>
+        </tr>
+
+    }
+
+    @main("journal auto") {
+        <table class="table table-hover">
+        @for(m <- model) {
+            @for(c <- cars){
+                @createTable(m)(c)
+            }
+        }
+        </table>
+        <a href="@routes.LoginController.logOut()" class="btn btn-primary">Выйти</a>
+        <a href="@routes.MainController.showClients()" class="btn btn-primary">Вернуться к клиентам</a>
+    } @import controllers.car.routes

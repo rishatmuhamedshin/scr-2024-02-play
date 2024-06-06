@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="insert into table" author="Rishat">
+        <insert tableName="Model">
+            <column name="id">1</column>
+            <column name="classes">Premium</column>
+            <column name="typeBody">Hatchback</column>
+            <column name="brand">BMW</column>
+        </insert>
+
+        <insert tableName="Model">
+            <column name="id">2</column>
+            <column name="classes">Premium</column>
+            <column name="typeBody">Hatchback</column>
+            <column name="brand">MERCEDES</column>
+        </insert>
+
+        <insert tableName="Model">
+            <column name="id">3</column>
+            <column name="classes">lowCoast</column>
+            <column name="typeBody">Hatchback</column>
+            <column name="brand">AUDI</column>
+        </insert>
+
+
+        <insert tableName="Car">
+            <column name="id">1</column>
+            <column name="mileage">1000</column>
+            <column name="regNumber">1020</column>
+            <column name="description">Быстая</column>
+            <column name="modelId">1</column>
+            <column name="priceHour">1000</column>
+            <column name="address">Казань</column>
+            <column name="releaseDate">28.01.2012</column>
+        </insert>
+
+        <insert tableName="Car">
+            <column name="id">2</column>
+            <column name="mileage">1000</column>
+            <column name="regNumber">1020</column>
+            <column name="description">Быстая</column>
+            <column name="modelId">2</column>
+            <column name="priceHour">1000</column>
+            <column name="address">Казань</column>
+            <column name="releaseDate">28.01.2012</column>
+        </insert>
+
+        <insert tableName="Car">
+            <column name="id">3</column>
+            <column name="mileage">1000</column>
+            <column name="regNumber">1020</column>
+            <column name="description">Быстая</column>
+            <column name="modelId">3</column>
+            <column name="priceHour">1000</column>
+            <column name="address">Казань</column>
+            <column name="releaseDate">28.01.2012</column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,22 @@
+@import models.dto.LoginDTO
+
+
+@import models.dto.CustomerDTO
+
+@import controllers.car.routes
+@(form: Form[CustomerDTO])(implicit lang: play.api.i18n.Lang)
+
+@main("Login"){
+
+    <H1>REGISTRATION</H1>
+    @helper.form(action = routes.RegistrationController.registrationCustomer()){
+        @helper.inputText(form("firstName"))(views.fieldsConstructors.bFieldContructors, lang)
+        @helper.inputText(form("lastName"))(views.fieldsConstructors.bFieldContructors, lang)
+        @helper.inputText(form("licenseNumber"))(views.fieldsConstructors.bFieldContructors, lang)
+        @helper.inputText(form("city"))(views.fieldsConstructors.bFieldContructors, lang)
+        @helper.inputText(form("street"))(views.fieldsConstructors.bFieldContructors, lang)
+        @helper.inputText(form("email"))(views.fieldsConstructors.bFieldContructors, lang)
+        @helper.inputPassword(form("password"))(views.fieldsConstructors.bFieldContructors, lang)
+        <button type="submit" class="btn btn-primary">Зарегестрироваться</button>
+    }
+}

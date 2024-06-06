@@ -1,0 +1,14 @@
+@import models.dto.LoginDTO
+
+@import controllers.car.routes
+@(form: Form[LoginDTO])(implicit lang: play.api.i18n.Lang)
+
+@main("Login"){
+
+    @helper.form(action = routes.LoginController.loginFormSubmit()){
+        @helper.inputText(form("email"))(views.fieldsConstructors.bFieldContructors, lang)
+        @helper.inputPassword(form("password"))(views.fieldsConstructors.bFieldContructors, lang)
+        <button type="submit" class="btn btn-primary">Log in</button>
+        <a href="@routes.RegistrationController.registration()" class="btn btn-primary">Зарегистрироваться</a>
+    }
+}
